@@ -1,0 +1,9 @@
+Composición esta lista.
+
+necesito copiarla y aplicar los cambios a las
+url de las diferentes paginas pilares
+
+armonia.html (Tejiendo emociones: Secretos de la armonía.)
+aplicación.html (De la teoría a la práctica: La música en acción.)
+pianomoderno.html (El arte en tus manos: Explorando el piano.)
+musical.html (Recursos para mejorar tu nivel musical)
