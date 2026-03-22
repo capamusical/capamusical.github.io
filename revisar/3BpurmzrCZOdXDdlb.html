@@ -1,0 +1,147 @@
+<html><head><base href="https://www.capamusical.com/#piano/#moderno">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capa Musical - Piano Moderno</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8f7b72;
+            --secondary-color: #a18e85;
+            --background-color: #f2eeed;
+            --text-color: #333;
+            --accent-color: #e74c3c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        h1, h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .piano-moderno {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .piano-moderno-info, .piano-moderno-image {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .piano-moderno-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #c0392b;
+        }
+        
+        @media (max-width: 768px) {
+            .piano-moderno {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#composicion">Composición</a></li>
+                <li><a href="#armonia">Armonía</a></li>
+                <li><a href="#piano">Piano</a></li>
+                <li><a href="#aplicacion">Aplicación</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#patreon">Patreon</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Piano Moderno</h1>
+        <p>Descubre el fascinante mundo del piano moderno y sus infinitas posibilidades creativas.</p>
+
+        <div class="piano-moderno">
+            <div class="piano-moderno-info">
+                <h2>¿Qué es el Piano Moderno?</h2>
+                <p>El piano moderno va más allá del instrumento tradicional, incorporando tecnología digital, síntesis y producción musical. Es una fusión entre lo clásico y lo contemporáneo, abriendo nuevas fronteras en la expresión musical.</p>
+                <p>En Capa Musical, te guiamos a través de este emocionante viaje, desde los fundamentos del piano hasta las técnicas más avanzadas de producción y composición con instrumentos digitales.</p>
+                <a href="#curso-piano-moderno" class="cta-button">Explorar Curso de Piano Moderno</a>
+            </div>
+            <div class="piano-moderno-image">
+                <img src="https://capamusical.com/images/piano-moderno.jpg" alt="Teclado MIDI y estación de trabajo digital" width="500" height="300">
+            </div>
+        </div>
+
+        <div class="piano-moderno">
+            <div class="piano-moderno-image">
+                <img src="https://capamusical.com/images/daw-interface.jpg" alt="Interfaz de una Estación de Trabajo de Audio Digital (DAW)" width="500" height="300">
+            </div>
+            <div class="piano-moderno-info">
+                <h2>Producción Musical con Piano Digital</h2>
+                <p>Aprende a utilizar tu piano o teclado digital en conjunto con software de producción musical. Descubre cómo crear arreglos complejos, experimentar con sintetizadores y efectos, y producir tus propias composiciones desde cero.</p>
+                <p>Nuestro curso cubre desde los conceptos básicos de MIDI hasta técnicas avanzadas de mezcla y masterización.</p>
+                <a href="#produccion-musical" class="cta-button">Descubre la Producción Musical</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Capa Musical. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body></html>

@@ -1,0 +1,85 @@
+<html><head><base href="https://example.com">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editor de Partituras Estilo LilyPond</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/abcjs/6.0.0/abcjs-basic-min.js"></script>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .widget {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 90%;
+    max-width: 600px;
+  }
+  h2 {
+    color: #333;
+    margin-top: 0;
+    font-size: 18px;
+  }
+  textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    font-family: monospace;
+  }
+  #staff {
+    width: 100%;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<div class="widget">
+  <h2>Editor de Partituras Estilo LilyPond</h2>
+  <textarea id="notation" placeholder="Ingrese la notación aquí...">X:1
+T:Ejemplo de Notación
+M:4/4
+L:1/4
+K:C
+C D E F | G A B c | c B A G | F E D C |</textarea>
+  <button onclick="renderNotation()">Renderizar Partitura</button>
+  <div id="staff"></div>
+</div>
+
+<script>
+function renderNotation() {
+  const notation = document.getElementById('notation').value;
+  const staff = document.getElementById('staff');
+  
+  // Limpiamos el contenido anterior
+  staff.innerHTML = '';
+  
+  // Renderizamos la nueva notación
+  ABCJS.renderAbc("staff", notation, {
+    responsive: "resize",
+    add_classes: true,
+    paddingleft: 0,
+    paddingright: 0,
+    paddingbottom: 10,
+    paddingTop: 10,
+    format: {
+      gchordfont: "Arial",
+      wordsfont: "Arial",
+      vocalfont: "Arial",
+      annotationfont: "Arial"
+    }
+  });
+}
+
+// Renderizamos la partitura inicial
+renderNotation();
+</script>
+
+</body></html>
