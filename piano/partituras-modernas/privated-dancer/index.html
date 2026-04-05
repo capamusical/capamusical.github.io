@@ -1,0 +1,179 @@
+<html>
+<head>
+    <title>Piano</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS correcto de ABCjs -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/abcjs@6.6.1/dist/abcjs-audio.min.css">
+
+    <!-- JS correcto -->
+    <script src="https://cdn.jsdelivr.net/npm/abcjs@6.6.1/dist/abcjs-basic-min.js"></script>
+
+    <link rel="stylesheet" href="/estilos/estilo-pilar.css">
+    <link rel="stylesheet" href="/estilos/estilo-paginas.css">
+    <link rel="icon" type="logo" href="/imagenes/favicon.png"/>
+
+    <!-- fallback CSS manual para evitar el mensaje -->
+    <style>
+    .abcjs-css-warning {
+    display: none !important;
+    }
+
+        .abcjs-inline-audio {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            margin: 20px auto;
+            max-width: 800px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: #f8f8f8;
+        }
+
+        .abcjs-inline-audio button {
+            cursor: pointer;
+            border: 1px solid #ccc;
+            background: white;
+            border-radius: 4px;
+            padding: 6px 10px;
+        }
+
+        .abcjs-inline-audio .abcjs-midi-progress-background {
+            flex: 1;
+            height: 10px;
+            background: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .abcjs-inline-audio .abcjs-midi-progress-indicator {
+            height: 100%;
+            background: #4285f4;
+            width: 0%;
+        }
+        #paper {
+    margin-top: 70px;
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <a href="/index.html">
+                    <img src="/imagenes/logo_vector.png" alt="CapaMusical Logo">
+                </a>
+                <span>CapaMusical</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/composicion.html">Composición</a></li>
+                <li><a href="/armonia.html">Armonía</a></li>
+                <li><a href="/pianomoderno.html">Piano</a></li>
+                <li><a href="/aplicacion.html">Aplicación</a></li>
+                <li><a href="/musical.html" target="_blank">Musical</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 style="display: none;">We dont another Hero</h1>
+
+        <div style="display:flex; justify-content:center;">
+            <div id="paper"></div>
+        </div>
+
+        <div id="audio"></div>
+    </main>
+
+        <!-- Footer Section -->
+        <footer>
+            <p style="text-align: center;">&copy; 2024 CapaMusical. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/capamusical" target="_blank">
+                    <img src="/imagenes/icons8-facebook-32.png" alt="Twitter" style="width:24px; height:24px;">
+                <a href="https://www.instagram.com/capamusical" target="_blank">
+                    <img src="/imagenes/icons8-instagram-32.png" alt="Instagram" style="width:24px; height:24px;"></a>
+                <a href="https://www.twitter.com/capamusical" target="_blank">
+                    <img src="/imagenes/icons8-twitterx-32.png" alt="Twitter" style="width:24px; height:24px;"></a>
+            </div>
+        </footer>
+
+    <script>
+        // menú móvil
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+    <script>
+        const abcString = `X:1
+T:Private Dancer
+T:(Tina Turner)
+C:Alfredo Goncalves
+M:4/4
+Q: 1/4 = 114
+L:1/8
+K:G
+Z8 | Z8 || GFGF GFAF- | F4-) (3F2E2G2 | D8- | D8 ||
+P:A
+|:Z8 :| Z7 | (3G2A2B2 (3B2A2G2 | E8- | E8 ||
+P:B
+|:Z8 :| Z15 | (3G2A2B2 (3B2A2G2 | E8 ||
+P:C
+|| Z8 | Z7 | z6 a1/a/g1 |
+P:Solo Saxo
+(GFGF GFAF) | z A>B1/ (3A/G/F/ A>B1/ (3A/G/F/ A  | z2 Dd1-d3 e | 
+dcBA AG B1A/G/ | EEDE GABA-  | A/G/d z c/B/ A/G/F/E/ D/C/B,/A,/  | 
+G,A,DB, A,G,F,/G,/F, | z F,/G,/ D/E/D z4 | d2 B2 z d2 B | 
+z e 3z/ B/z/A/ z/A/G/E/ G/A/B/ z/ | z EGA Begb | c'8 ||
+P:Solo Guitarra
+Z16 ||
+P:Estribillo
+|:Z7 |1  z8 :|2 (3z2G2F2 (3G2G2A2 ||
+d'8 | Z | (3D2E2G2 (3G2E2G2 | A2 ED-  D4 | 
+Z | Z | Z | Z | c4 B4 | A4 c4 | d8- | d8 ||`;
+
+        const visualObj = ABCJS.renderAbc("paper", abcString, {
+    responsive: "resize"
+})[0];
+
+        const synth = new ABCJS.synth.CreateSynth();
+        const control = new ABCJS.synth.SynthController();
+
+        control.load("#audio", null, {
+            displayPlay: true,
+            displayProgress: true,
+            displayRestart: true,
+            displayLoop: true,
+            displayWarp: true
+        });
+
+        control.disable(true);
+
+        synth.init({ visualObj: visualObj }).then(() => {
+            synth.prime().then(() => {
+                control.setTune(visualObj, false).then(() => {
+                    control.disable(false);
+                });
+            });
+        });
+
+        // activar audio en primer click
+        document.querySelector("#audio").addEventListener("click", () => {
+            control.activateAudio();
+        }, { once: true });
+    </script>
+</body>
+</html>
