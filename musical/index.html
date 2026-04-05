@@ -1,0 +1,284 @@
+<html><head>
+    <title>musical</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/estilos/estilo-pilar.css">
+    <link rel="stylesheet" href="/estilos/estilo-paginas.css">
+    <link rel="icon" type="logo" href="/imagenes/favicon.png"/>
+
+<style>
+
+.resources-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+h1 {
+    color: var(--secondary-color);
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: var(--accent-color);
+    margin: 10px auto;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.resource-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.resource-card h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.resource-list {
+    list-style: none;
+    padding: 0;
+}
+
+.resource-list li {
+    margin-bottom: 10px;
+}
+
+.resource-list a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.resource-list a:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.resource-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    fill: currentColor;
+}
+
+.youtube-embed {
+    margin-top: 15px;
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.youtube-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+</style>
+</head>
+
+<header>
+    <nav class="container">
+        <div class="logo">
+            <a href="/index.html">
+                <img src="/imagenes/logo_vector.png" alt="CapaMusical Logo">
+            </a>
+            <span>CapaMusical</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/composicion/">Composición</a></li>
+            <li><a href="/armonia/">Armonía</a></li>
+            <li><a href="/piano/">Piano</a></li>
+            <li><a href="/aplicacion/">Aplicación</a></li>
+            <li><a href="/musical/">Musical</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+</header>
+
+
+<body>
+    <div class="resources-container">
+        <h1>Recursos Musicales</h1>
+        <div class="resource-grid">
+            <!-- Patreon Section -->
+            <div class="resource-card">
+                <h2>Más Contenido </h2>
+                <ul class="resource-list">
+                    <li>
+                        <a href="https://www.patreon.com/capamusical" target="_blank">
+                            <svg class="resource-icon" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                            Contenido Exclusivo Musical
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://capamusical.blogspot.com/" target="_blank">
+                            <svg class="resource-icon" viewBox="0 0 24 24">
+                                <path d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                            Publicaciones Blog
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Descargas Section -->
+            <div class="resource-card">
+                <h2>Descargas Gratuitas</h2>
+                <ul class="resource-list">
+                    <li>
+                        <a href="/descargas/midis.rar" target="_blank">
+                            <svg class="resource-icon" viewBox="0 0 24 24">
+                                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                            </svg>
+                            Packs MIDIs
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/descargas/piano_partituras.rar" target="_blank">
+                            <svg class="resource-icon" viewBox="0 0 24 24">
+                                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                            </svg>
+                            Partituras
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- PDFs Section -->
+            <div class="resource-card">
+                <h2>PDFs Educativos</h2>
+                <ul class="resource-list">
+                    <li>
+                        <a href="/pdfs/La biblia del piano latino.pdf">
+                            <svg class="resource-icon" viewBox="0 0 24 24">
+                                <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                            </svg>
+                            La biblia del piano latino
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/pdfs/La biblia del piano latino.pdf">
+                            <svg class="resource-icon" viewBox="0 0 24 24">
+                                <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                            </svg>
+                            Guía de Escalas
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- YouTube Section -->
+            <div class="resource-card">
+                <h2>Tutoriales en YouTube</h2>
+                <div class="youtube-embed">
+                    <iframe src="https://www.youtube.com/embed/TqTlShNwg8c?si=S9bDXfnOIhAmgdIt" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Recursos Adicionales -->
+            <div class="resource-card">
+                <h2>Mi musica</h2>
+                <iframe width="350" height="195" class="mubert-iframe mubert-widget" src="https://play.mubert.com/c75a19b829e3fc43d09d3eda6?embed=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+            </div>
+
+            <!-- Publicidad Section -->
+            <div class="resource-card">
+                <h2>Servicios musicales</h2>
+            <script type="text/javascript" src="https://form.jotform.com/jsform/260936268480061"></script>    
+
+        
+            </div>
+        </div>
+    </div>
+            <!-- Footer Section -->
+            <footer>
+                <p style="text-align: center;">&copy; 2024 CapaMusical. Todos los derechos reservados.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/capamusical" target="_blank">
+                        <img src="/imagenes/icons8-facebook-32.png" alt="Twitter" style="width:24px; height:24px;">
+                    <a href="https://www.instagram.com/capamusical" target="_blank">
+                        <img src="/imagenes/icons8-instagram-32.png" alt="Instagram" style="width:24px; height:24px;"></a>
+                    <a href="https://www.twitter.com/capamusical" target="_blank">
+                        <img src="/imagenes/icons8-twitterx-32.png" alt="Twitter" style="width:24px; height:24px;"></a>
+                </div>
+            </footer>
+            <script>
+            // Mobile menu toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+        
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+          </script>
+        <script src="/script/home-script.js"></script>
+        <script>
+          document.addEventListener('DOMContentLoaded', (event) => {
+            const articleLinks = document.querySelectorAll('.article-link');
+            
+            articleLinks.forEach(link => {
+              link.addEventListener('mouseover', () => {
+                link.style.transform = 'scale(1.05)';
+                link.style.transition = 'transform 0.3s ease';
+              });
+              
+              link.addEventListener('mouseout', () => {
+                link.style.transform = 'scale(1)';
+              });
+            });
+      
+            const highlightBoxes = document.querySelectorAll('.highlight-box');
+            
+            highlightBoxes.forEach(box => {
+              box.addEventListener('mouseover', () => {
+                box.style.boxShadow = '0 5px 15px rgba(33, 150, 243, 0.3)';
+                box.style.transition = 'box-shadow 0.3s ease';
+              });
+              
+              box.addEventListener('mouseout', () => {
+                box.style.boxShadow = 'none';
+              });
+            });
+          });
+        </script>
+      </body>
+      </html>
